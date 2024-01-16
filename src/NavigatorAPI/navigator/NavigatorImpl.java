@@ -25,7 +25,14 @@ public class NavigatorImpl implements Navigator {
         }
 
     }
-
+    public void setFavoriteRoute(String routeId){
+        for (var r:routeTreeSet){
+            if (r.getId().equals(routeId)){
+                r.setFavorite(true);
+                break;
+            }
+        }
+    }
     @Override
     public boolean contains(Route route) {
         return routeTreeSet.contains(route);

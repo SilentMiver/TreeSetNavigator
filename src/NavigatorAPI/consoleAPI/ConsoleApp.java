@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ConsoleApp {
-    private static final Navigator navigator = new NavigatorImpl();
+    private static final NavigatorImpl navigator = new NavigatorImpl();
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void start() {
@@ -49,12 +49,23 @@ public class ConsoleApp {
             case 7 -> getRouteByID();
             case 8 -> chooseRouteByID();
             case 9 -> countOfRoutes();
-            case 10 -> {
+            case 10 -> setFavoriteRoute();
+            case 11 -> {
                 System.out.println("Exiting the application. Goodbye!");
                 System.exit(0);
             }
             default -> System.out.println("Invalid choice. Please enter a valid option.");
         }
+    }
+
+    private static void setFavoriteRoute() {
+        separation();
+        System.out.println("Enter Route details:");
+
+        System.out.print("ID: ");
+        String id = scanner.next();
+        navigator.setFavoriteRoute(id);
+        System.out.println("Favorite Set");
     }
 
     private static void countOfRoutes() {
@@ -127,7 +138,8 @@ public class ConsoleApp {
         System.out.println("7. Find Route by ID");
         System.out.println("8. Chose Route By ID");
         System.out.println("9. Count of Routes");
-        System.out.println("10. Exit");
+        System.out.println("10. Set favorite Route");
+        System.out.println("11. Exit");
         System.out.print("Enter your choice: ");
 
     }
