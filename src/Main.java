@@ -1,6 +1,5 @@
-import utils.RedBlackTree;
-
-import java.util.TreeSet;
+import utils.RedBlackTree.RedBlackTree;
+import utils.Set.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +22,15 @@ public class Main {
 //        tree.
         System.out.println(tree.contains(119));
         System.out.println(tree.contains(0));
-        var treeset = new TreeSet<>();
+        TreeSet<Integer> treeset = new TreeSet<>();
+        System.out.println("-----");
+        System.out.println(treeset.add(10));
+
+        System.out.println(treeset.add(10));
+        treeset.add(11);
+        for (var e : treeset){
+            System.out.println(e);
+        }
 
 
     }
