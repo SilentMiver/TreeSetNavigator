@@ -1,4 +1,4 @@
-package utils;
+package NavigatorAPI.utils.RedBlackTree;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -550,7 +550,8 @@ public class RedBlackTree<T extends Comparable<T>> implements Iterable<T>, Itera
      * @return true - если элемент найден; false - если элемент не найда.
      */
     public boolean contains(T o) {
-        return (findNode(o) != _nil);
+        if (_root.isFree()) return false;
+        else return (findNode(o) != _nil);
     }
 
 
@@ -622,4 +623,5 @@ public class RedBlackTree<T extends Comparable<T>> implements Iterable<T>, Itera
         } else
             throw new IllegalStateException();
     }
+
 }

@@ -1,6 +1,9 @@
-import utils.RedBlackTree;
+import NavigatorAPI.routes.Route;
+import NavigatorAPI.utils.RedBlackTree.RedBlackTree;
+import NavigatorAPI.utils.Set.TreeSet;
 
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,8 +26,45 @@ public class Main {
 //        tree.
         System.out.println(tree.contains(119));
         System.out.println(tree.contains(0));
-        var treeset = new TreeSet<>();
+        TreeSet<Integer> treeset = new TreeSet<>();
+        System.out.println("-----");
+        System.out.println(treeset.add(10));
+
+        System.out.println(treeset.add(10));
+        treeset.add(11);
+        treeset.remove(10);
+        for (var e : treeset){
+            System.out.println(e);
+        }
+
+        Route route1 = createRoute("1", 100.0, 3, true, "A", "B", "C");
+        Route route2 = createRoute("2", 150.0, 2, false, "A", "D");
+        Route route3 = createRoute("3", 120.0, 4, true, "B", "C", "D", "J");
+        Route route4 = createRoute("4", 111.0, 4, true, "B", "G", "D", "E");
+        Route route5 = createRoute("5", 130.0, 4, true, "B", "C", "D", "F");
+        Route route6 = createRoute("6", 150.0, 4, true, "B", "C", "D", "N");
+        var treeset1 = new TreeSet<Route>();
 
 
+
+        System.out.println(treeset1.add(route1));
+        System.out.println(treeset1.add(route2));
+        System.out.println(treeset1.add(route2));
+        System.out.println(treeset1.add(route3));
+        System.out.println(treeset1.add(route4));
+        System.out.println(treeset1.add(route5));
+        System.out.println(treeset1.add(route6));
+        for (var e : treeset1){
+            System.out.println(e);
+        }
+    }
+    private static Route createRoute(String id, double distance, int popularity, boolean isFavorite, String... locationPoints) {
+        Route route = new Route();
+        route.setId(id);
+        route.setDistance(distance);
+        route.setPopularity(popularity);
+        route.setFavorite(isFavorite);
+        route.setLocationPoints(new ArrayList<>(Arrays.asList(locationPoints)));
+        return route;
     }
 }
