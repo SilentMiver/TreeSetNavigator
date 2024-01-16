@@ -64,7 +64,9 @@ public class ConsoleApp {
 
         System.out.print("ID: ");
         String id = scanner.next();
-        navigator.setFavoriteRoute(id);
+        System.out.print("Is Favorite (true/false):");
+        Boolean favorite = scanner.nextBoolean();
+        navigator.setFavoriteRoute(id, favorite);
         System.out.println("Favorite Set");
     }
 
@@ -134,7 +136,7 @@ public class ConsoleApp {
         System.out.println("3. Search Routes");
         System.out.println("4. Get Favorite Routes");
         System.out.println("5. Get Top 3 Routes");
-        System.out.println("6. Check Route by ID");
+        System.out.println("6. Check Route");
         System.out.println("7. Find Route by ID");
         System.out.println("8. Chose Route By ID");
         System.out.println("9. Count of Routes");

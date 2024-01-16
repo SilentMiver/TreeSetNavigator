@@ -25,10 +25,10 @@ public class NavigatorImpl implements Navigator {
         }
 
     }
-    public void setFavoriteRoute(String routeId){
+    public void setFavoriteRoute(String routeId, boolean isFavorite){
         for (var r:routeTreeSet){
             if (r.getId().equals(routeId)){
-                r.setFavorite(true);
+                r.setFavorite(isFavorite);
                 break;
             }
         }
