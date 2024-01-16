@@ -50,6 +50,9 @@ public class TreeSet<E extends Comparable<E>> implements Set<E>,Iterable<E> {
         var newRedBlacktree = new RedBlackTree<E>();
         this.redBlackTree = newRedBlacktree;
     }
+    public void print(){
+        redBlackTree.printTree();
+    }
     @Override
     public Iterator<E> iterator() {
         return new Iterator<E>() {

@@ -72,7 +72,7 @@ public class Route implements Comparable<Route> {
         // Compare by locationPoints
         int locationComparison = this.locationPoints.get(0).compareTo(otherRoute.locationPoints.get(0));
         if (locationComparison != 0) return locationComparison;
-        locationComparison = this.locationPoints.get(this.locationPoints.size()).compareTo(otherRoute.locationPoints.get(otherRoute.locationPoints.size()));
+        locationComparison = this.locationPoints.get(this.locationPoints.size() -1).compareTo(otherRoute.locationPoints.get(otherRoute.locationPoints.size() -1));
         if (locationComparison != 0) return locationComparison;
 
         // Compare by id

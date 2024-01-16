@@ -37,12 +37,13 @@ public class Main {
             System.out.println(e);
         }
 
-        Route route1 = createRoute("1", 100.0, 3, true, "A", "B", "C");
-        Route route2 = createRoute("2", 150.0, 2, false, "A", "D");
-        Route route3 = createRoute("3", 120.0, 4, true, "B", "C", "D", "J");
-        Route route4 = createRoute("4", 111.0, 4, true, "B", "G", "D", "E");
-        Route route5 = createRoute("5", 130.0, 4, true, "B", "C", "D", "F");
-        Route route6 = createRoute("6", 150.0, 4, true, "B", "C", "D", "N");
+        Route route1 = createRoute("1", 100.0, 3, true, "B", "B", "C");
+        Route route2 = createRoute("2", 150.0, 2, false, "B", "D");
+        Route route3 = createRoute("3", 120.0, 4, true, "B", "C", "D", "C");
+        Route route4 = createRoute("4", 111.0, 4, true, "B", "G", "D", "C");
+        Route route5 = createRoute("5", 130.0, 4, true, "B", "C", "D", "C");
+        Route route6 = createRoute("6", 150.0, 4, true, "B", "C", "D", "C");
+        Route route7 = createRoute("6", 3.0, 4, true, "B", "C", "C");
         var treeset1 = new TreeSet<Route>();
 
 
@@ -54,9 +55,11 @@ public class Main {
         System.out.println(treeset1.add(route4));
         System.out.println(treeset1.add(route5));
         System.out.println(treeset1.add(route6));
+        System.out.println(treeset1.add(route7));
         for (var e : treeset1){
             System.out.println(e);
         }
+        treeset1.print();
     }
     private static Route createRoute(String id, double distance, int popularity, boolean isFavorite, String... locationPoints) {
         Route route = new Route();
