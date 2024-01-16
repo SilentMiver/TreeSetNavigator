@@ -111,7 +111,7 @@ public class ConsoleApp {
 
     private static void printMenu() {
         separation();
-        System.out.println("Navigator Console App Menu:");
+        System.out.println("Navigator Console App:");
         System.out.println("1. Add Route");
         System.out.println("2. Remove Route");
         System.out.println("3. Search Routes");
@@ -201,13 +201,15 @@ public class ConsoleApp {
     }
 
     private static void addSampleRoutes() {
-        Route route1 = createRoute("1", 1.0, 6, true, "A", "B", "C");
-        Route route2 = createRoute("2", 2.0, 6, false, "D", "E");
-        Route route3 = createRoute("3", 3.0, 6, true, "A", "C", "D", "E","F");
+        Route route1 = createRoute("1", 10.0, 7, true, "A", "B", "C");
+        Route route2 = createRoute("2", 3.0, 6, false, "D", "E");
+        Route route3 = createRoute("3", 4.0, 6, true, "A", "C", "D", "E", "F");
+        Route route4 = createRoute("4", 10.0, 6, true,  "C", "D", "E", "F");
 
         navigator.addRoute(route1);
         navigator.addRoute(route2);
         navigator.addRoute(route3);
+        navigator.addRoute(route4);
     }
 
     private static Route createRoute(String id, double distance, int popularity, boolean isFavorite, String... locationPoints) {

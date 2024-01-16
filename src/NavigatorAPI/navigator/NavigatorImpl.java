@@ -91,7 +91,7 @@ public class NavigatorImpl implements Navigator {
                 result.add(route);
             }
         }
-        result.sort(Comparator.comparing(Route::getDistance).thenComparing(Route::getPopularity).reversed());
+        result.sort(Comparator.comparing(Route::getDistance).thenComparing(Route::getPopularity));
         return result;
     }
 
