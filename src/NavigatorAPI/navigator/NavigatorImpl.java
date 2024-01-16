@@ -103,6 +103,7 @@ public class NavigatorImpl implements Navigator {
                 .thenComparing(Route::getDistance)
                 .thenComparing(route -> route.getLocationPoints().size()));
 
+            // Тут можно поменять top3 на top5
         return allRoutes.subList(0, Math.min(3, allRoutes.size()));
     }
 }

@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class TreeSet<E extends Comparable<E>> implements Set<E>,Iterable<E> {
     RedBlackTree<E> redBlackTree;
-    private boolean firstAddBoolFlag = true;
+//    private boolean firstAddBoolFlag = true;
 
     public TreeSet() {
         this.redBlackTree = new RedBlackTree<>();

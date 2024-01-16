@@ -48,12 +48,18 @@ public class ConsoleApp {
             case 6 -> containsRoute();
             case 7 -> getRouteByID();
             case 8 -> chooseRouteByID();
-            case 9 -> {
+            case 9 -> countOfRoutes();
+            case 10 -> {
                 System.out.println("Exiting the application. Goodbye!");
                 System.exit(0);
             }
             default -> System.out.println("Invalid choice. Please enter a valid option.");
         }
+    }
+
+    private static void countOfRoutes() {
+        separation();
+        System.out.println("Count of Routes is: " + navigator.size());
     }
 
     private static void chooseRouteByID() {
@@ -120,7 +126,8 @@ public class ConsoleApp {
         System.out.println("6. Check Route by ID");
         System.out.println("7. Find Route by ID");
         System.out.println("8. Chose Route By ID");
-        System.out.println("9. Exit");
+        System.out.println("9. Count of Routes");
+        System.out.println("10. Exit");
         System.out.print("Enter your choice: ");
 
     }
